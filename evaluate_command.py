@@ -27,19 +27,19 @@ class Command_evaluator():
     
     def _search_func_1(self, features):
         webbrowser.open('https://www.google.com//search?q=' + '+'.join(features))
-        return 'Найдено!\n'
+        return '\"' + ' '.join(features) + '\" найдено!\n'
     
     def _webbrowser(self, features):
         webbrowser.open('https://www.google.com/')
-        return 'Исполнено!\n'
+        return 'Браузер открыт!\n'
     
     def _taskmgr(self, features):
         os.system('taskmgr.exe')
-        return 'Исполнено!'
+        return 'Диспетчер задач открыт!'
     
     def _control(self,features):
         os.system('control')
-        return 'Исполнено!'
+        return 'Панель управления открыта!'
     
     def _close(self, features):
         sys.exit()
@@ -48,10 +48,10 @@ class Command_evaluator():
         self.curvol = sound.Sound.current_volume()
         sound.Sound.mute()
         sound.Sound.volume_set(self.curvol)
-        return 'Исполнено!'
+        return 'Звук отключен!'
     
     def _enable_sound(self, features):
         self.curvol = sound.Sound.current_volume()
         sound.Sound.mute()
         sound.Sound.volume_set(self.curvol)
-        return 'Исполнено!'
+        return 'Звук включен!'
